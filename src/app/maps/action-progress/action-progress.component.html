@@ -1,0 +1,18 @@
+<mat-card *ngIf="actionItem">
+  <div class="progress-content">
+    <div class="status-icon">
+      <mat-icon *ngIf="actionItem.completed && actionItem.progress === 100" color="accent">check_circle</mat-icon>
+      <mat-icon *ngIf="actionItem.completed && actionItem.progress < 100" color="warn">cancel</mat-icon>
+      <mat-icon *ngIf="!actionItem.completed">pending</mat-icon>
+    </div>
+    <div style="width: 100%">
+      <span><strong>Action {{actionItem.id}}</strong></span>
+      <mat-progress-bar [color]="actionItem.completed ? (
+                          actionItem.progress === 100 ? 'accent' : 'warn'
+                        ) : 'accent'"
+                        [value]="actionItem.progress"
+                        mode="determinate">
+      </mat-progress-bar>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Compare map behavior</h1>
+  <p>In this experiment you'll be able to test the difference between
+    <strong>switchMap</strong>,
+    <strong>concatMap</strong>,
+    <strong>mergeMap</strong> and
+    <strong>exhaustMap</strong>.</p>
+  <mat-divider></mat-divider>
+
+  <div class="actions">
+    <mat-button-toggle-group #group="matButtonToggleGroup" (valueChange)="mode$.next($event)" [value]="'switchMap'">
+      <mat-button-toggle aria-label="switchMap" value="switchMap">
+        switchMap
+      </mat-button-toggle>
+      <mat-button-toggle aria-label="concatMap" value="concatMap">
+        concatMap
+      </mat-button-toggle>
+      <mat-button-toggle aria-label="mergeMap" value="mergeMap">
+        mergeMap
+      </mat-button-toggle>
+      <mat-button-toggle aria-label="exhaustMap" value="exhaustMap">
+        exhaustMap
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <div class="buttons-container">
+      <button (click)="action$.next()" color="accent" mat-raised-button>CLICK ME!</button>
+      <span>You clicked {{clicks$ | async}} times</span>
+      <button (click)="reset$.next()" color="warn" mat-flat-button>RESET</button>
+    </div>
+  </div>
+
+  <div *ngIf="selectedMode$ | async" class="observable-container">
+    <ls-action-progress *ngFor="let i of actionItems; trackBy: trackById" [actionItem]="i"
+                        class="action-progress"></ls-action-progress>
+  </div>
+
+
+</div>
