@@ -5,7 +5,7 @@
                fixedInViewport>
     <mat-toolbar>Examples</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="maps">Maps</a>
+      <a mat-list-item routerLink="maps" routerLinkActive="active-nav-item">Maps</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="main-content">
@@ -20,6 +20,12 @@
       </button>
       <img alt="LS Logo" class="logo" src="./assets/logo.png">
       <span>RxJS Examples</span>
+      <a href="https://github.com/lsparagino/rxjs-examples"
+         style="margin-left: auto"
+         target="_blank"
+         rel="noopener"
+         mat-raised-button
+         color="accent">View on GitHub</a>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

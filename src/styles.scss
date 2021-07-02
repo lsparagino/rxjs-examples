@@ -1,4 +1,45 @@
-@import "global-styles/material-theme";
+@import "global-styles/material-theme.scss";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-text-primary {
+  color: $primary-color !important;
+}
+
+.mat-text-accent {
+  color: $accent-color !important;
+}
+
+.mat-text-warn {
+  color: $error-color !important;
+}
+
+.mat-text-primary-contrast {
+  color: $primary-contrast-color !important;
+}
+
+.mat-text-accent-contrast {
+  color: $accent-contrast-color !important;
+}
+
+.mat-bg-primary {
+  background-color: $primary-color !important;
+}
+
+.mat-bg-accent {
+  background-color: $accent-color !important;
+}
+
+.mat-bg-warn {
+  background-color: $error-color !important;
+}
+
+$theme-bg: map-get(map-get($app-theme, background), background);
+
+
+.active-nav-item {
+  font-weight: bold;
+  background-color: $accent-color!important;
+  color: $accent-contrast-color!important;
+}
