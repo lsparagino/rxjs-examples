@@ -1,6 +1,8 @@
 # RxJS Examples
 
-This is a collection of RxJS examples to support my blog articles on www.sparagino.it.
+This is a collection of RxJS examples to support my blog articles on https://sparagino.it.
+
+Live version: https://rxjs.sparagino.it
 
 ## Development server
 
